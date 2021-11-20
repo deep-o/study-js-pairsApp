@@ -1,0 +1,171 @@
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #7DC8F7;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.flex-all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #F0EEFF;
+  box-shadow: 0 0 10px rgba(40,106,205,0.8);
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #110C6C;
+  border-radius: 5px;
+  outline: none;
+  margin-right: 50px;
+  width: 20px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-rows), 1fr);
+  grid-template-rows: repeat(var(--grid-cols), 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+
+.card {
+  padding: 10px;
+  background-color: #D9E4F5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(40,106,205,0.8);
+  background-image: url('back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotateY(180deg);
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.flip, .open {
+  transform: rotateY(0deg);
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  color: #314459;
+  font-weight: 700;
+  background-color: #EAF6FF;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.flip .inner {
+  opacity: 1;
+}
+
+.btn {
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  background-color: #110C6C;
+  color: #E0FFFF;
+  transition: background-color 0.3s ease-in-out,
+              border-color 0.3s ease-in-out,
+              color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #E0FFFF;
+  color: #110C6C;
+  border-color: #110C6C;
+}
+
+.btn:active {
+  background-color: #314459;
+  color: #E0FFFF;
+}
+
+.bnt:focus {
+  border-color: transparent;
+  outline: none;
+}
+
+.btn-restart {
+  position: absolute;
+  bottom: 25px;
+}
+
+.timer {
+  position: absolute;
+  top: 25px;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background-color: #110C6C;
+  color: #E0FFFF;
+  font-size: 24px;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  padding: 10px;
+  border: 3px solid red;
+  border-radius: 10px;
+  font-size: 50px;
+  font-weight: 700;
+  color: red;
+}
